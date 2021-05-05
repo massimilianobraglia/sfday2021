@@ -1,0 +1,20 @@
+security:
+    providers:
+        database_users:
+            entity:
+                class: 'App\Entity\User'
+
+    firewalls:
+        dev:
+            pattern: '^/(_(profiler|wdt)|css|images|js)/'
+            security: false
+        main:
+            anonymous: true
+            lazy: true
+            provider: 'database_users'
+            http_basic:
+                realm: 'Secured Area'
+
+    encoders:
+        App\Entity\User:
+            algorithm: 'auto'

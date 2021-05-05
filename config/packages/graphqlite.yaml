@@ -1,0 +1,10 @@
+graphqlite:
+    namespace:
+        controllers: 'App\GraphQL\Controller\'
+        types:
+            - 'App\GraphQL\Type\'
+            - 'App\Entity\'
+
+    security:
+        enable_login: 'on'
+        enable_me: 'on'
